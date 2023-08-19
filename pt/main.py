@@ -50,7 +50,6 @@ HUNDREDS = {
 
 def write_number(number: (str, int)):
     number = str(number) if isinstance(number, int) else number
-
     number = strip_number(number)
 
     if len(number) > 3 or not number.isdecimal():
@@ -59,10 +58,8 @@ def write_number(number: (str, int)):
     match len(number):
         case 1:
             return write_unity(number)
-        
         case 2:
             return write_dozen(number)
-        
         case 3:
             return write_hundred(number)
             
@@ -89,10 +86,9 @@ def write_hundred(number):
 
 
 def strip_number(number):
-
     while number[0] == '0' and len(number) > 1:
         number = number[1:]
-    
+
     return number   
 
 

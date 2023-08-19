@@ -37,7 +37,6 @@ DOZENS = {
 
 def write_number(number: (str, int)):
     number = str(number) if isinstance(number, int) else number
-
     number = strip_number(number)
 
     if len(number) > 3 or not number.isdecimal():
@@ -72,7 +71,6 @@ def write_hundred(number):
 
 
 def strip_number(number):
-
     while number[0] == '0' and len(number) > 1:
         number = number[1:]
     

@@ -85,14 +85,13 @@ def write_hundred(number):
     if number == '100':
         return 'cem'
     
-    return f'{HUNDREDS.get(number[-3])} e {write_dozen(number[-2:])}'
+    return f'{HUNDREDS.get(number[-3])} e {write_number(number[-2:])}'
 
 
 def strip_number(number):
 
     while number[0] == '0' and len(number) > 1:
         number = number[1:]
-
     
     return number   
 

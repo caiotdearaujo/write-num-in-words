@@ -46,9 +46,10 @@ def write_number(number: (str, int)):
     match len(number):
         case 1:
             return write_unity(number)
-        
         case 2:
             return write_dozen(number)
+        case 3:
+            return write_hundred(number)
             
 
 def write_unity(number):
@@ -65,11 +66,15 @@ def write_dozen(number):
     return f'{DOZENS.get(number[-2])}-{UNITIES.get(number[-1])}'
 
 
+def write_hundred(number):
+    coef = 'a' if number[-3] == '1' else UNITIES.get(number[-3])
+    return f'{coef} hundred {write_number(number[-2:])}'
+
+
 def strip_number(number):
 
     while number[0] == '0' and len(number) > 1:
         number = number[1:]
-
     
     return number   
 

@@ -56,14 +56,6 @@ def write_number(number: (str, int)):
     if len(number) > 3 or not number.isdecimal():
         raise TypeError(f'{number} is not supported')
     
-    match number:
-        case '22':
-            return 'é o mito'
-        case '13':
-            return 'fazueli'
-        case '17':
-            return 'bozonaro é norte bozonaro é nordexti'
-    
     match len(number):
         case 1:
             return write_unity(number)
@@ -97,8 +89,10 @@ def write_hundred(number):
 
 
 def strip_number(number):
-    while number[0] == '0':
+
+    while number[0] == '0' and len(number) > 1:
         number = number[1:]
+
     
     return number   
 
